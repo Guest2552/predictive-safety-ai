@@ -1,0 +1,14 @@
+
+---
+
+### 📦 **requirements.txt**
+
+```txt
+Flask
+torch
+transformers
+datasets
+scikit-learn
+pandas
+numpy
+google-generativeai
