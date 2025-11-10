@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Predictive Safety Analysis{% endblock %}
+
+{% block content %}
+<section id="hero-section" class="fade-in">
+    <div class="hero-text">
+        <h1>PREDICTIVE SAFETY RISK ANALYSIS</h1>
+        <p class="subtitle">ENERGY INDUSTRIAL INCIDENTS</p>
+        <p>
+            Our service uses advanced Transformer models and Generative AI to analyze industrial incident reports. Predict potential risk levels and get expert analysis to prevent accidents before they happen.
+        </p>
+        <a href="{{ url_for('demo') }}" class="cta-button">Try Now</a>
+        <a href="{{ url_for('about') }}" class="cta-button secondary">Learn More</a>
+    </div>
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/unnamed.jpg') }}" 
+             alt="Predictive Safety Risk Analysis Dashboard">
+    </div>
+</section>
+
+<section id="benefits" class="content-section">
+    <h2 class="fade-in">Why Use Predictive Safety Analysis?</h2>
+    <div class="card-container">
+        <div class="card fade-in">
+            <div class="card-icon">🛡️</div>
+            <h4>Enhance Safety</h4>
+            <p>Identify high-risk situations from text reports before they escalate into major incidents.</p>
+        </div>
+        <div class="card fade-in">
+            <div class="card-icon">⏱️</div>
+            <h4>Save Time & Resources</h4>
+            <p>Automatically classify thousands of reports, focusing your team's efforts where they are needed most.</p>
+        </div>
+        <div class="card fade-in">
+            <div class="card-icon">📊</div>
+            <h4>Data-Driven Decisions</h4>
+            <p>Make informed, proactive choices based on hidden patterns and trends in your historical incident data.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

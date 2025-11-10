@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Demo - Predictive Safety Analysis{% endblock %}
+
+{% block content %}
+<div class="page-title fade-in">
+    <h1>Predict Incident Risk</h1>
+</div>
+
+<section id="prediction-tool" class="content-section fade-in">
+    <div class="demo-container">
+        <div class="form-wrapper">
+            <h2>Enter an Incident Report</h2>
+            <p>Paste the details of an industrial incident below to predict its potential risk level.</p>
+
+            <form id="predict-form">
+                <textarea id="report-text" name="report_text" rows="10" placeholder="e.g., Abnormal vibration and overheating detected in the pump of the Substation. Unit was manually taken offline for inspection." required></textarea>
+                <button type="submit" id="predict-button">Analyze Risk</button>
+            </form>
+        </div>
+
+        <div class="result-wrapper">
+            <h3>Prediction Result</h3>
+            <div id="result-area">
+                <div id="error-message" class="error-text"></div>
+                <div class="result-box" id="result-box-placeholder">
+                    <p>Your analysis will appear here.</p>
+                </div>
+                
+                <div id="result-content" class="hidden">
+                    <h4 id="prediction-output">--</h4>
+                    <p><strong>Confidence:</strong> <span id="confidence-output">--</span>%</p>
+                    
+                    <hr class="llm-divider">
+                    <h3>AI Expert Analysis</h3>
+                    <p id="llm-output" class="llm-analysis-content">--</p>
+                    <hr class="llm-divider">
+                    <p class="processed-text-title">Processed Text (for local model):</p>
+                    <p id="processed-text-output" class="processed-text-content">--</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="examples-wrapper fade-in">
+    <h3>Examples to Try</h3>
+    <ul id="example-list">
+        <li>Technician noticed a small, oily patch near the base of transformer T-105. No active leak, but monitoring the situation. Filter seems clogged.</li>
+        <li>Operator error during startup caused a coolant spill that was immediately contained. No injuries.</li>
+        <li>A loud bang was heard from substation B. Automated emergency systems have been triggered. Reports of smoke.</li>
+        <li>Catastrophic failure of a turbine blade resulted in a major fire. Full rig evacuation is underway.</li>
+    </ul>
+</section>
+{% endblock %}

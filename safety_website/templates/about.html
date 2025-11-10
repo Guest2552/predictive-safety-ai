@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}About - Predictive Safety Analysis{% endblock %}
+
+{% block content %}
+<div class="page-title fade-in">
+    <h1>About the Project</h1>
+</div>
+
+<section class="content-section fade-in" id="about-layout">
+    
+    <!-- Left Column: Methodology -->
+    <div class="about-column">
+        <h2>Our Technology</h2>
+        <p><strong>Goal:</strong> The goal is to build a model that can predict the severity of future incidents (Low, Medium, High, Critical) based on textual incident reports, enabling organizations to respond more effectively.</p>
+        
+        <h3>Methodology</h3>
+        <p><strong>Text Preprocessing:</strong> Incident reports are tokenized using a specialized DistilBERT tokenizer from the Hugging Face library, which is optimized for Transformer models.</p>
+        <p><strong>Feature Engineering:</strong> The tokenizer converts raw text into numerical token embeddings, capturing deep semantic meaning rather than just word frequency (like TF-IDF).</p>
+        <p><strong>Model Selection:</strong> A DistilBERT Transformer model was fine-tuned for this specific multi-class text classification task, providing state-of-the-art performance.</p>
+        <p><strong>Dual Analysis:</strong> The app provides two outputs:
+             (1) A quantitative risk classification from the fine-tuned Transformer and
+             (2) A qualitative analysis from the Gemini 2.0 Flash LLM.</p>
+    </div>
+
+    <!-- Right Column: Tech Stack -->
+    <div class="about-column">
+        <h3>Technology Stack</h3>
+        <div class="card-container-grid">
+            <!-- Tech Cards -->
+            <div class="card tech-card">
+                <h4>Python</h4>
+                <p>Core language.</p>
+            </div>
+            <div class="card tech-card">
+                <h4>Flask</h4>
+                <p>Web server.</p>
+            </div>
+            <div class="card tech-card">
+                <h4>Hugging Face</h4>
+                <p>DistilBERT model.</p>
+            </div>
+            <div class="card tech-card">
+                <h4>PyTorch</h4>
+                <p>Transformer backend.</p>
+            </div>
+            <div class="card tech-card">
+                <h4>Gemini API</h4>
+                <p>Generative analysis.</p>
+            </div>
+            <div class="card tech-card">
+                <h4>HTML/CSS/JS</h4>
+                <p>Frontend interface.</p>
+            </div>
+        </div>
+        
+        <div class="about-image fade-in">
+             <!-- 
+                **IMPORTANT:** Save your 'Data Flow.png' image in the 'static/images/' folder 
+                and rename it to 'prediction_process.png' for this code to work. 
+             -->
+             <img src="{{ url_for('static', filename='images/Data_Flow.png') }}" 
+                 alt="Incident Severity Prediction Process"
+                 onerror="this.src='https://placehold.co/500x300/2a2e34/e0e0e0?text=Data+Flow+Chart'">
+        </div>
+    </div>
+
+</section>
+{% endblock %}
